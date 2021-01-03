@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  Index
+  <div class="container text center">
+      <p>Posts</p>
+  </div>
 @endsection
