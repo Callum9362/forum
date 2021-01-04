@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
+
 
 class RegisterController extends Controller
 {
@@ -35,11 +35,7 @@ class RegisterController extends Controller
       ]);
 
       //Sign the user in
-      /*Auth::attempt([
-          'email' => $request->email,
-          'password' => $request->password,
-          ]);
-          */
+      //auth()->attempt($request->only('email', 'password'));
 
       //redirect
       return redirect()->route('dashboard');
