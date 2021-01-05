@@ -20,6 +20,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('home') }}">Home</a>
               </li>
+              @auth
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
               </li>
@@ -27,20 +28,23 @@
                 <a class="nav-link" href="#">Posts</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Account</a>
+                <a class="nav-link" href="#">{{ auth()->user()->name }}</a>
               </li>
+              @endauth
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('login') }}">Login</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('register') }}">Register</a>
               </li>
+              @auth
               <li class="nav-item">
                 <form action="{{route('logout')}}" method="post">
                   @csrf
                   <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Logout</button>
                 </form>
               </li>
+              @endauth
             </ul>
           </div>
         </div>
