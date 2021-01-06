@@ -30,6 +30,10 @@
                         {{ $message }}
                     </div>
                 @enderror
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="remember" id="remember">
+                    <label class="form-check-label" for="remember"> Remember Me </label>
+                  </div>
                 <div class="d-grid gap-2 col-6 mx-auto">
                     <button class="btn btn-primary" type="submit">Login</button>
                 </div>
