@@ -25,7 +25,7 @@
                 <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Posts</a>
+                <a class="nav-link" href="{{ route('posts') }}">Posts</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">{{ auth()->user()->name }}</a>
