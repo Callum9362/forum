@@ -23,18 +23,22 @@
               <a class="font-bold none">{{ $post->user->username }}</a> <span>{{ $post->created_at->diffForHumans() }}</span>
               <p class="mb-2">{{  $post->body }}</p>
               <div class="row">
+                  @if(!$post->likedBy(auth()->user()))
                   <div class="col-1">
                     <form action="{{ route('posts.likes', $post->id)}}" method="post" class="mr-1">
                         @csrf
                         <button type="submit" class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3">Like</button>
                     </form>
                    </div>
+                   @else
                    <div class="col-1">
-                    <form action="" method="post" class="mr-1">
+                    <form action="{{ route('posts.likes', $post->id)}}" method="post">
                         @csrf
+                        @method('DELETE')
                         <button type="submit" class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3">Unlike</button>
                     </form>
                   </div>
+                  @endif
               </div>
               <div class="row">
                 <div class="col-2">
