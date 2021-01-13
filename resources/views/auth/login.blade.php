@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container text center">
+  <div class="container text center w-50">
     <div class="card">
         <div class="card-header text-center">
           Login
